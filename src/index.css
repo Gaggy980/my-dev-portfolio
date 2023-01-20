@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;300;400;600;800&display=swap");
+
+.content-div {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+}
+.content-div:hover {
+  background-image: linear-gradient(
+    135deg,
+    rgba(29, 161, 224, 0.7),
+    rgba(186, 166, 148, 0.7)
+  ) !important;
+}
+.hover-trigger .hover-target {
+  display: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hover-trigger:hover .hover-target {
+  display: block;
+  transition: ease-in-out;
+  transition: all 0.5s;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* colors pallete */
+  :root {
+    --bgcolor: 27 31 43;
+    --dsec: 186 166 148;
+    --lsec: 241 230 219;
+    --dprim: 83 128 170;
+    --lprim: 29 161 242;
+  }
+
+  body {
+    @apply font-[Rokkitt];
+  }
+  li {
+    @apply px-4 cursor-pointer hover:text-lprim duration-300;
+  }
+  .social-card {
+    @apply w-[165px] h-[60px] flex justify-between items-center ml-[-110px] hover:ml-[-9px] duration-500 rounded-sm;
+  }
+  .social-link {
+    @apply flex justify-between items-center text-lsec w-full;
+  }
+  .btn {
+    @apply text-lsec text-xl border-2 px-6 py-3 my-2 flex items-center cursor-pointer font-semibold
+   hover:bg-lprim hover:border-dsec hover:text-bgcolor duration-200 max-w-[220px];
+  }
+  .input-styles {
+    @apply bg-dsec/60 text-bgcolor font-bold my-3 p-2 text-xl  border-b-2 border-lprim outline-none rounded-md;
+  }
+  .soc-round {
+    @apply flex flex-col justify-center items-center  bg-lprim rounded-full w-[2.5rem] h-[2.5rem] hover:text-bgcolor text-bgcolor;
+  }
 }
