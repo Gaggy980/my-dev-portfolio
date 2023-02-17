@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-import CV from "../assets/IgorGagicResume.pdf"
+import CV from "../assets/IgorGagicResume.docx"
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
